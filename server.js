@@ -3,7 +3,10 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path=require('path');
-require('dotenv').config(); // Load environment variables from .env file
+const dotenv=require('dotenv'); // Load environment variables from .env file
+dotenv.config();
+const PORT = process.env.PORT || 3000;
+
 
 const app = express();
 app.use(cors());
@@ -47,6 +50,6 @@ app.get('/*', function (req, res) {
   });
 
 
-app.listen(8000, () => {
-    console.log(`Server is running on port 8000.`);
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}.`);
 });
