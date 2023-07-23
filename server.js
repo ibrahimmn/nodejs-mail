@@ -45,8 +45,12 @@ app.post('/send-email', (req, res) => {
   });
 
  
-app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+app.get('/', function (req, res) {
+    // res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    res
+    .status(200)
+    .send('Hello server is running')
+    .end();
   });
 
 
